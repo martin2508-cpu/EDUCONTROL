@@ -1,4 +1,4 @@
-# EDUCONTROL 2.0
+# EDUCONTROL 
 
 ## Sistema de Gestión Académica
 

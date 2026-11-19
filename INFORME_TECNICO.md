@@ -377,25 +377,6 @@ La interfaz no concentra las reglas principales del sistema. Las operaciones se 
 
 Cuando ocurre un error de validación, la interfaz presenta un mensaje para que el usuario pueda corregir la información ingresada.
 
-## 5.5. Evidencias de la interfaz
-
-En esta sección se deben incorporar capturas reales de la aplicación en funcionamiento.
-
-Las siguientes imágenes corresponden a los espacios previstos para documentar las principales vistas:
-
-**Figura 1. Dashboard principal**
-
-![Dashboard principal](imagenes/01_dashboard.png)
-
-**Figura 2. Detalle de asignatura**
-
-![Detalle de asignatura](imagenes/05_detalle_asignatura.png)
-
-**Figura 3. Gestión de calificaciones**
-
-![Gestión de calificaciones](imagenes/06_calificaciones.png)
-
-Las imágenes deben ubicarse en la carpeta `docs/imagenes/` y las rutas deben coincidir con los nombres de los archivos utilizados.
 
 ---
 

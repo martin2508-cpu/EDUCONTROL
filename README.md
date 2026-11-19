@@ -1,196 +1,275 @@
-# INFORME TÉCNICO — EDUCONTROL
+# EDUCONTROL 2.0
 
-## 1. Análisis del problema
+## Sistema de Gestión Académica
 
-**Necesidad.** Administrar a mano estudiantes, docentes, materias y notas dificulta calcular promedios, detectar estudiantes en riesgo y comparar el rendimiento entre asignaturas.
+EDUCONTROL 2.0 es una aplicación de escritorio desarrollada en Python que permite gestionar información académica de estudiantes, profesores, asignaturas y calificaciones mediante una interfaz gráfica intuitiva y organizada.
 
-**Público objetivo.** Personal académico o docentes que necesitan un control sencillo del rendimiento de un grupo de estudiantes.
+El proyecto fue desarrollado como parte del parcial integrador de la asignatura de Programación Orientada a Objetos, aplicando los principales fundamentos del paradigma POO.
 
-**Funcionalidades.**
-1. Gestión (crear, editar, buscar, eliminar) de estudiantes, profesores y asignaturas, con asignación de docente.
-2. Registro de tres notas por estudiante y asignatura, con validación y cálculo automático de promedio y estado.
-3. Dashboard y reportes: indicadores, gráficas interactivas, ranking, estudiantes en riesgo y resumen por asignatura.
+---
 
-**Limitaciones.** Los datos viven solo en memoria (no hay base de datos ni archivos, como permite el enunciado); al cerrar la aplicación se pierden. Un estudiante tiene exactamente tres notas por asignatura. No hay usuarios ni roles.
+## 1. Descripción del proyecto
 
-## 2. Diseño inicial
+EDUCONTROL 2.0 tiene como propósito facilitar la administración de información académica mediante un sistema que centraliza el registro y la consulta de estudiantes, profesores, asignaturas y resultados académicos.
 
-Se identificaron los sustantivos del problema para convertirlos en clases, y los verbos en métodos de un servicio que los coordina:
+La aplicación cuenta con un panel principal desde el cual se puede acceder a las diferentes funcionalidades del sistema, consultar información y visualizar estadísticas académicas.
 
-| Clase | Responsabilidad |
+El sistema utiliza almacenamiento en memoria, por lo que los datos se mantienen durante la ejecución de la aplicación, pero no se conservan después de cerrarla.
+
+## 2. Problema que resuelve
+
+La gestión manual de información académica puede generar desorganización, dificultades para consultar registros y errores al administrar calificaciones.
+
+EDUCONTROL 2.0 busca ofrecer una solución informática que permita organizar esta información de manera estructurada, facilitando su administración y consulta a través de una interfaz gráfica.
+
+## 3. Objetivos
+
+### Objetivo general
+
+Desarrollar una aplicación de escritorio para la gestión académica, aplicando los principios de la Programación Orientada a Objetos y proporcionando una interfaz gráfica que facilite la administración de la información.
+
+### Objetivos específicos
+
+- Implementar clases y objetos para representar las entidades del sistema académico.
+- Aplicar encapsulamiento, herencia, abstracción y polimorfismo.
+- Establecer relaciones entre las diferentes clases del proyecto.
+- Desarrollar una interfaz gráfica interactiva.
+- Implementar funcionalidades para administrar estudiantes, profesores, asignaturas y calificaciones.
+- Incorporar estadísticas para facilitar la interpretación de la información académica.
+
+## 4. Funcionalidades principales
+
+### 4.1. Panel principal
+
+Presenta un resumen general del sistema mediante tarjetas informativas y elementos gráficos que permiten consultar rápidamente el estado de la información académica.
+
+### 4.2. Gestión de estudiantes
+
+Permite registrar, consultar y administrar la información de los estudiantes.
+
+### 4.3. Gestión de profesores
+
+Permite organizar la información de los profesores registrados en el sistema.
+
+### 4.4. Gestión de asignaturas
+
+Permite administrar las asignaturas y organizar la información académica correspondiente.
+
+### 4.5. Gestión de calificaciones
+
+Permite registrar y actualizar las calificaciones de los estudiantes, aplicando las validaciones establecidas en el sistema.
+
+### 4.6. Estadísticas académicas
+
+Presenta información gráfica y estadística relacionada con los registros académicos, facilitando su consulta y análisis.
+
+## 5. Tecnologías utilizadas
+
+| Tecnología | Descripción |
 |---|---|
-| `Persona` (abstracta) | Datos comunes (identificación, nombre, correo) con validación |
-| `Estudiante`, `Profesor` | Especializan a `Persona` (código/programa; especialidad) |
-| `Asignatura` | Materia con intensidad horaria y un profesor responsable |
-| `Calificacion` | Una nota válida entre 0.0 y 5.0 |
-| `RegistroAcademico` | Reúne las 3 notas de un estudiante en una asignatura; calcula promedio y estado |
-| `GestorAcademico` | Guarda las colecciones, aplica las reglas (duplicados, existencia) y calcula estadísticas |
-| `VentanaPrincipal` y vistas | Interfaz: muestran datos y reenvían las acciones del usuario al gestor |
+| Python | Lenguaje principal de programación. |
+| CustomTkinter | Desarrollo de la interfaz gráfica. |
+| Tkinter | Componentes y funcionalidades de la interfaz. |
+| Matplotlib | Generación de gráficos y estadísticas. |
+| Pillow | Procesamiento y manejo de imágenes. |
+| Unittest | Ejecución de pruebas automatizadas. |
+| Git y GitHub | Control de versiones y alojamiento del proyecto. |
 
-Decisión de diseño: **la interfaz no contiene reglas del negocio**; solo llama al `GestorAcademico` y muestra el resultado o el error (`ValueError`).
+## 6. Arquitectura del sistema
+
+El proyecto utiliza una estructura modular que separa los modelos de datos, la lógica de gestión académica y los componentes de la interfaz gráfica.
+
+Esta organización permite mantener el código ordenado, facilitar su mantenimiento y distribuir las responsabilidades entre los diferentes módulos.
+
+### Organización general
+
+- **modelos:** contiene las clases que representan las entidades académicas.
+- **servicios:** contiene la lógica encargada de gestionar las operaciones académicas.
+- **interfaz:** contiene las ventanas, vistas, componentes visuales, gráficos y elementos de diseño.
+- **pruebas:** contiene las pruebas automatizadas del sistema.
+- **main.py:** punto de entrada para ejecutar la aplicación.
+
+## 7. Aplicación de la Programación Orientada a Objetos
+
+EDUCONTROL 2.0 implementa los principales conceptos de la Programación Orientada a Objetos.
+
+### 7.1. Clases y objetos
+
+Se utilizan clases para representar las entidades principales del sistema, como Persona, Estudiante, Profesor, Asignatura, Calificacion y RegistroAcademico.
+
+A partir de estas clases se crean objetos que representan los registros administrados por la aplicación.
+
+### 7.2. Encapsulamiento
+
+Se protegen los atributos internos de las clases mediante atributos privados o protegidos y propiedades que permiten controlar el acceso a la información.
+
+### 7.3. Herencia
+
+Las clases Estudiante y Profesor heredan de la clase Persona, reutilizando sus atributos y comportamientos comunes.
+
+### 7.4. Polimorfismo
+
+Se implementa mediante el método `mostrar_informacion()`, definido de manera diferente en las clases Estudiante y Profesor, permitiendo que cada una proporcione su propia representación de la información.
+
+### 7.5. Abstracción
+
+La clase Persona se define como una clase abstracta que establece una estructura común para las clases que representan a las personas dentro del sistema.
+
+### 7.6. Relaciones entre clases
+
+El sistema establece relaciones entre sus entidades para representar la organización de la información académica, incluyendo relaciones de asociación, agregación y composición según las responsabilidades de cada clase.
+
+## 8. Diagrama de clases
+
+El siguiente diagrama representa la estructura general de las clases principales del sistema.
 
 ```mermaid
 classDiagram
     class Persona {
         <<abstract>>
-        -_identificacion
-        -_nombre
-        -_correo
-        +mostrar_informacion()* str
+        -identificacion
+        -nombre
+        -correo
+        +mostrar_informacion()*
     }
+
     class Estudiante {
-        -_codigo
-        -_programa
-        +mostrar_informacion() str
+        +mostrar_informacion()
     }
+
     class Profesor {
-        -_especialidad
-        +mostrar_informacion() str
+        +mostrar_informacion()
     }
+
     class Asignatura {
-        -_codigo
-        -_nombre
-        -_intensidad_horaria
-        -_profesor
-        +actualizar()
+        -codigo
+        -nombre
     }
+
     class Calificacion {
-        -_nota
-        +nota
+        -nota
     }
+
     class RegistroAcademico {
-        -_calificaciones
-        +promedio
-        +estado
-        +actualizar_notas()
+        -calificaciones
     }
+
     class GestorAcademico {
-        +estudiantes
-        +profesores
-        +asignaturas
-        +registros
-        +agregar_estudiante()
-        +guardar_calificaciones()
-        +promedio_por_asignatura()
+        +gestionar_registros()
     }
-    class VentanaPrincipal
+
     Persona <|-- Estudiante
     Persona <|-- Profesor
-    Asignatura --> "0..1" Profesor : asociación
-    RegistroAcademico *-- "3" Calificacion : composición
-    RegistroAcademico --> Estudiante
-    RegistroAcademico --> Asignatura
-    GestorAcademico o-- Estudiante : agregación
-    GestorAcademico o-- Profesor
-    GestorAcademico o-- Asignatura
-    GestorAcademico o-- RegistroAcademico
-    VentanaPrincipal --> GestorAcademico : usa
+    Estudiante "1" --> "*" RegistroAcademico
+    Asignatura "1" --> "*" RegistroAcademico
+    RegistroAcademico *-- "3" Calificacion
+    GestorAcademico --> Estudiante
+    GestorAcademico --> Profesor
+    GestorAcademico --> Asignatura
 ```
 
-## 3. Arquitectura
+## 9. Interfaz gráfica
 
-Tres capas con dependencia en un solo sentido (`interfaz → servicios → modelos`):
+La interfaz gráfica fue desarrollada utilizando CustomTkinter, con una distribución organizada que facilita la navegación entre las diferentes secciones del sistema.
 
-- **`modelos/`**: entidades del dominio. No conocen la interfaz.
-- **`servicios/gestor_academico.py`**: casos de uso y estadísticas. No conoce la interfaz.
-- **`interfaz/`**: ventana, vistas, componentes, gráficas, iconos y tema. Se divide en módulos pequeños (`vista_dashboard`, `vista_asignaturas`, `componentes`, `graficas`…) para que ningún archivo concentre todo. `graficas.py` no usa Tkinter, por lo que se prueba sin abrir ventanas.
+Entre sus elementos principales se encuentran:
 
-`main.py` crea `VentanaPrincipal`, que crea el `GestorAcademico` y carga los datos de demostración. Flujo típico: el usuario pulsa un botón → *callback* en la vista → llamada al gestor → el gestor valida y modifica los modelos (o lanza `ValueError`) → la vista actualiza la tabla o muestra el aviso.
+- Panel de navegación lateral.
+- Tarjetas informativas.
+- Tablas para visualizar registros.
+- Formularios para ingresar información.
+- Botones para ejecutar operaciones.
+- Gráficos estadísticos.
+- Ventanas y componentes reutilizables.
 
-## 4. Aplicación de POO
+La interfaz utiliza eventos y funciones de respuesta para conectar las acciones del usuario con la lógica del sistema.
 
-| Concepto | Clase o método | Archivo | Explicación |
-|---|---|---|---|
-| Clases y objetos | `Estudiante`, `Profesor`, `Asignatura`, `Calificacion`, `RegistroAcademico`, `GestorAcademico` | `modelos/*.py`, `servicios/gestor_academico.py` | Cada una con una responsabilidad única; el gestor crea y mantiene los objetos en listas |
-| Encapsulamiento | `Persona._nombre` y propiedades de solo lectura; `Calificacion.nota` (setter con validación 0–5); `Asignatura.intensidad_horaria`/`nombre` (setters validados) y `Asignatura.actualizar()`; `Estudiante.codigo`, `Profesor.especialidad`; `RegistroAcademico.calificaciones` (devuelve tupla) | `modelos/*.py` | El estado solo cambia por vías que validan; `actualizar()` valida todo antes de asignar, así un error no deja la asignatura a medias |
-| Herencia | `Estudiante(Persona)`, `Profesor(Persona)` | `modelos/estudiante.py`, `modelos/profesor.py` | Reutilizan identificación, nombre y correo y llaman a `super().__init__()`; añaden sus propios datos |
-| Polimorfismo | `mostrar_informacion()` | `modelos/estudiante.py`, `modelos/profesor.py`; usado en `VentanaPrincipal._confirmar_eliminacion` | Esa función recibe una `Persona` cualquiera y llama al mismo método; cada subclase responde con un texto distinto en el cuadro de confirmación de eliminación |
-| Abstracción | `Persona(ABC)` con `@abstractmethod mostrar_informacion` | `modelos/persona.py` | Contrato: toda persona del sistema debe poder describirse; `Persona` no se puede instanciar |
-| Asociación | `Asignatura.profesor`; `RegistroAcademico.estudiante/asignatura` | `modelos/asignatura.py`, `modelos/registro_academico.py` | Los objetos se conocen pero existen por separado (al borrar un profesor, la asignatura queda sin docente) |
-| Agregación | `GestorAcademico.estudiantes/profesores/asignaturas/registros` | `servicios/gestor_academico.py` | El gestor agrupa y administra objetos que tienen sentido por sí mismos |
-| Composición | `RegistroAcademico._calificaciones` | `modelos/registro_academico.py` | El registro crea sus 3 `Calificacion`; sin registro no existen |
+## 10. Instalación y ejecución
 
-Fragmentos clave:
+### Requisitos previos
 
-```python
-# Abstracción + herencia (modelos/persona.py, modelos/estudiante.py)
-class Persona(ABC):
-    @abstractmethod
-    def mostrar_informacion(self): ...
+- Python 3.10 o superior.
+- Git.
+- Conexión a internet para instalar las dependencias.
 
-class Estudiante(Persona):
-    def __init__(self, identificacion, nombre, correo, codigo, programa):
-        super().__init__(identificacion, nombre, correo)
+### Clonar el repositorio
+
+```bash
+git clone https://github.com/martin2508-cpu/EDUCONTROL.git
 ```
 
-```python
-# Encapsulamiento con validación (modelos/calificacion.py)
-@nota.setter
-def nota(self, valor):
-    numero = float(valor)
-    if not 0 <= numero <= 5:
-        raise ValueError("La nota debe estar entre 0.0 y 5.0.")
-    self._nota = round(numero, 2)
+### Ingresar al proyecto
+
+```bash
+cd EDUCONTROL
 ```
 
-```python
-# Polimorfismo (interfaz/ventana_principal.py)
-def _confirmar_eliminacion(self, persona, aviso=""):
-    return messagebox.askyesno("Confirmar eliminación",
-        f"¿Eliminar este registro?\n\n{persona.mostrar_informacion()}...")
+### Instalar las dependencias
+
+```bash
+pip install customtkinter matplotlib pillow
 ```
 
-## 5. Construcción de la interfaz
+### Ejecutar la aplicación
 
-- **Biblioteca:** CustomTkinter (tema oscuro) para ventanas, botones y tarjetas; `ttk.Treeview` para tablas; Matplotlib embebido con `FigureCanvasTkAgg` para las gráficas; Pillow para los iconos.
-- **Diseño:** barra lateral de navegación + área de contenido. Panel general con 4 indicadores y 6 gráficas, y vistas de administración con buscador, tabla y botones de acción.
-- **Controles:** botones, cuadros de texto, listas desplegables (estudiante, asignatura, docente), tablas con selección, buscador, formularios en ventana modal y avisos flotantes.
-- **Eventos y callbacks:** `command=` en botones; `bind("<KeyRelease>")` en el buscador; `bind("<Double-1>")` para editar; eventos de ratón de Matplotlib (`motion_notify_event`, `button_press_event`) para tooltips, resaltado y clic en barras; `after()` para la animación de entrada de las barras y para cerrar los avisos.
-- **Comunicación con las clases:** cada callback llama al `GestorAcademico`. Los errores de validación (`ValueError`) se muestran al usuario y el formulario se reabre conservando lo escrito.
+Ubicarse en la carpeta que contiene `main.py` y ejecutar:
 
-Capturas: ver `docs/imagenes/` (también incluidas en el README).
+```bash
+python main.py
+```
 
-![Dashboard](imagenes/01_dashboard.png)
-![Detalle de asignatura](imagenes/05_detalle_asignatura.png)
-![Calificaciones](imagenes/06_calificaciones.png)
+**Nota:** Si se utiliza el archivo comprimido del proyecto, primero se debe extraer su contenido y acceder a la carpeta correspondiente.
 
-## 6. Proceso de desarrollo
+## 11. Pruebas del sistema
 
-1. **Formulación de la idea:** un sistema de gestión académica sencillo pero completo, con tema libre y sin persistencia.
-2. **Identificación de funcionalidades:** CRUD de entidades, registro de notas con promedio y reportes/dashboard.
-3. **Diseño de clases:** del análisis de sustantivos salieron las clases de la sección 2; se decidió qué relaciones eran reales (herencia de `Persona`, composición de notas) en lugar de forzar las demás.
-4. **Construcción de la lógica:** primero `modelos/` y `GestorAcademico`, probados con `unittest` antes de existir la interfaz.
-5. **Desarrollo de la interfaz:** ventana y navegación, vistas CRUD y luego dashboard con gráficas.
-6. **Integración:** conexión de los callbacks con el gestor y manejo de errores de validación.
-7. **Pruebas y correcciones:** pruebas unitarias, revisión visual de cada vista y ajustes (ver sección 8).
+El proyecto incorpora pruebas automatizadas mediante la biblioteca `unittest`, con el propósito de verificar el comportamiento de los modelos, las operaciones académicas y determinados componentes gráficos.
 
-## 7. Pruebas
+Para ejecutar las pruebas, utilizar:
 
-Se ejecutan con `python -m unittest discover -s pruebas -t . -v`. Resultado: **23 pruebas, todas OK**. Las más representativas:
+```bash
+python -m unittest discover -s pruebas -t . -v
+```
 
-| Prueba | Acción realizada | Resultado esperado | Resultado obtenido |
-|---|---|---|---|
-| 1. Promedio y estado | `guardar_calificaciones("1001", "MAT01", [4, 3, 5])` | Promedio 4.0 y estado "Aprobado" | Promedio 4.0, "Aprobado" ✔ (`test_promedio`) |
-| 2. Reprobado | Notas `[2, 2.5, 3]` | Estado "Reprobado" (promedio 2.5 < 3.0) | "Reprobado" ✔ (`test_reprobado`) |
-| 3. **Error:** nota fuera de rango | Guardar notas `[4, 6, 5]` | Se rechaza con `ValueError` y no se guarda | `ValueError` lanzado ✔ (`test_nota_fuera_de_rango`) |
-| 4. **Error:** identificación repetida | Registrar dos estudiantes con la identificación "1001" | `ValueError` ("Ya existe un estudiante…") | `ValueError` lanzado ✔ (`test_identificacion_duplicada`) |
-| 5. Abstracción | Instanciar `Persona(...)` directamente | `TypeError` (clase abstracta) | `TypeError` ✔ (`test_persona_es_abstracta`) |
-| 6. Polimorfismo | Llamar `mostrar_informacion()` en un `Estudiante` y un `Profesor` | Textos distintos ("Estudiante: …" / "Profesor: …") | Textos distintos ✔ (`test_polimorfismo_mostrar_informacion`) |
-| 7. Encapsulamiento | Asignar `estudiante.codigo = "otro"`; poner horas = 0 en una asignatura | `AttributeError`; `ValueError` sin alterar el objeto | Ambos ✔ (`test_atributos_protegidos`, `test_asignatura_valida_al_modificar`) |
+En la versión verificada se ejecutaron 19 pruebas automatizadas, todas finalizadas correctamente.
 
-Además hay pruebas de las estadísticas del gestor (por asignatura, distribución, riesgo, ranking) y de las gráficas, que se dibujan sin abrir ventanas y responden a eventos de ratón simulados. La interfaz se revisó visualmente vista por vista (capturas en `docs/imagenes/`).
+## 12. Almacenamiento de información
 
-## 8. Problemas y soluciones
+EDUCONTROL 2.0 utiliza almacenamiento en memoria.
 
-**Problema 1 — Esquinas con "cuadritos" oscuros en Windows.**
-*Diagnóstico:* en una captura en Windows aparecían pequeños cuadros oscuros en las esquinas de tarjetas, botones del menú y logo. CustomTkinter dibuja cada esquina redondeada en un lienzo cuyo color de fondo toma del widget padre; los *frames* transparentes usaban además un radio por defecto (6 px) que no se veía pero generaba esas esquinas. *Solución:* primero se puso un `bg_color` explícito en todos los widgets redondeados y radio 0 en los frames transparentes; como en esa pantalla seguían apareciendo, se centralizó el redondeo en `tema.REDONDEO` (valor 0 = esquinas rectas) y se hicieron opacos los iconos con esquinas. Con eso ya no se dibuja ninguna esquina redondeada.
+Esto significa que los registros creados durante la ejecución se mantienen disponibles mientras la aplicación permanece abierta. Sin embargo, al cerrar el programa, la información se pierde.
 
-**Problema 2 — Iconos de texto desiguales.**
-*Diagnóstico:* los iconos del menú eran símbolos Unicode (♙ ♧ ▤ ✎ ▥); según la fuente instalada salían pequeños, de tamaños distintos y desalineados. *Solución:* se creó `interfaz/iconos.py`, que dibuja cada icono con Pillow (a 8x y reducido) y lo entrega como `CTkImage`; ahora todos tienen el mismo tamaño y no dependen de la fuente del equipo.
+La implementación de una base de datos y la persistencia de información se consideran posibles mejoras para futuras versiones.
 
-**Problema 3 — Polimorfismo que existía pero no se usaba.**
-*Diagnóstico:* al revisar el proyecto contra el enunciado, `mostrar_informacion()` estaba definido en `Estudiante` y `Profesor` pero ningún código lo llamaba, es decir, el polimorfismo era solo decorativo. *Solución:* se agregó `VentanaPrincipal._confirmar_eliminacion(persona)`, que muestra en el cuadro de confirmación el texto de `mostrar_informacion()` de cualquier `Persona`, y se añadió una prueba que lo verifica.
+## 13. Limitaciones actuales
 
-## 9. Conclusiones
+- No cuenta con una base de datos.
+- La información no se conserva después de cerrar la aplicación.
+- No dispone de autenticación de usuarios.
+- No cuenta con conexión a un servidor externo.
+- Su funcionamiento está orientado a un entorno de escritorio.
 
-El proyecto permitió aplicar abstracción, herencia, polimorfismo, encapsulamiento y los tres tipos de relación entre objetos con un propósito real dentro de la aplicación, manteniendo la lógica separada de la interfaz y comprobándola con pruebas automáticas. Las mayores dificultades estuvieron en la interfaz (renderizado de esquinas, iconos y gráficas interactivas), no en la lógica. Como mejoras posibles: guardar los datos en un archivo o base de datos, permitir un número variable de notas con porcentajes por corte, exportar reportes a PDF o Excel, y agregar roles de usuario.
+## 14. Mejoras futuras
+
+- Implementación de una base de datos para almacenar la información permanentemente.
+- Incorporación de módulos de autenticación y control de acceso.
+- Generación de informes académicos.
+- Exportación de información a formatos PDF y Excel.
+- Implementación de nuevas herramientas de análisis estadístico.
+- Optimización de la interfaz y ampliación de las funcionalidades.
+
+## 15. Documentación adicional
+
+El proyecto puede complementarse con un informe técnico que describe el análisis del problema, el diseño del sistema, la arquitectura, la aplicación de los principios de POO, el desarrollo de la interfaz gráfica, las pruebas realizadas y las conclusiones.
+
+## 16. Autor
+
+**Martin Castro**
+
+Proyecto académico desarrollado para la asignatura de Programación Orientada a Objetos.
+
+**Repositorio:**  
+https://github.com/martin2508-cpu/EDUCONTROL
+
+---
+
+**EDUCONTROL 2.0 — Sistema de Gestión Académica**

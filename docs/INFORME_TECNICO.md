@@ -151,16 +151,6 @@ Cada botón está asociado a una función de respuesta que se ejecuta cuando el 
 
 La interfaz llama a los métodos del gestor académico y muestra el resultado o el mensaje de error. Las validaciones de los datos viven en los modelos, no en la interfaz.
 
-### Capturas de pantalla
-
-![Panel principal](evidencias/dashboard.png)
-
-![Gestión de estudiantes](evidencias/estudiantes.png)
-
-![Gestión de calificaciones](evidencias/calificaciones.png)
-
-![Estadísticas académicas](evidencias/reportes.png)
-
 ## 6. Proceso de desarrollo
 
 1. **Formulación de la idea:** se decidió crear un sistema de gestión académica por ser un dominio con entidades claras que permite aplicar herencia, polimorfismo, abstracción y relaciones.

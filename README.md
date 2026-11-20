@@ -229,7 +229,7 @@ python main.py
 
 Al abrir la aplicación se muestra el panel principal con tarjetas de resumen y gráficos. Desde el menú lateral se accede al resto de secciones.
 
-![Panel principal](docs/imagenes/panel_principal.png)
+![Panel principal](evidencias/dashboard.png)
 
 ### 12.2. Gestión de estudiantes
 

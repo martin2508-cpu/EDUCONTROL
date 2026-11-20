@@ -6,8 +6,6 @@ EDUCONTROL es una aplicación de escritorio desarrollada en Python que permite g
 
 El proyecto fue desarrollado como parte del parcial integrador de la asignatura de Programación Orientada a Objetos, aplicando los principales fundamentos del paradigma POO.
 
-> Búsqueda rápida antes de entregar: busca el texto `COMPLETAR` en este archivo. Cada coincidencia es algo que debes llenar con tus datos reales (capturas, nombres de archivos, pasos).
-
 ---
 
 ## 1. Descripción del proyecto
@@ -47,19 +45,19 @@ Presenta un resumen general del sistema mediante tarjetas informativas y element
 
 ### 4.2. Gestión de estudiantes
 
-Permite registrar, consultar y administrar la información de los estudiantes. COMPLETAR: indica qué operaciones concretas tiene el botón (agregar, buscar, editar, eliminar) y qué datos se piden.
+Permite registrar, consultar y administrar la información de los estudiantes.
 
 ### 4.3. Gestión de profesores
 
-Permite organizar la información de los profesores registrados en el sistema. COMPLETAR: operaciones concretas.
+Permite organizar la información de los profesores registrados en el sistema.
 
 ### 4.4. Gestión de asignaturas
 
-Permite administrar las asignaturas y organizar la información académica correspondiente. COMPLETAR: operaciones concretas.
+Permite administrar las asignaturas y organizar la información académica correspondiente.
 
 ### 4.5. Gestión de calificaciones
 
-Permite registrar y actualizar las calificaciones de los estudiantes, aplicando las validaciones establecidas en el sistema. COMPLETAR: indica el rango válido de notas y qué mensaje aparece si el dato es incorrecto.
+Permite registrar y actualizar las calificaciones de los estudiantes, aplicando las validaciones establecidas en el sistema.
 
 ### 4.6. Estadísticas académicas
 
@@ -82,8 +80,8 @@ Presenta información gráfica y estadística relacionada con los registros acad
 | Biblioteca | Qué problema resuelve | Por qué se eligió | Instalación | Dónde se usa |
 |---|---|---|---|---|
 | CustomTkinter | Construir una interfaz de escritorio moderna. | Ofrece componentes más actuales que Tkinter y es compatible con él. | `pip install customtkinter` | Carpeta `interfaz/`: ventanas, formularios, botones y tablas. |
-| Matplotlib | Mostrar estadísticas en gráficos. | Permite generar gráficos y integrarlos en la interfaz. | `pip install matplotlib` | Carpeta `interfaz/`: vista de estadísticas y panel principal. COMPLETAR: archivo exacto. |
-| Pillow | Cargar y mostrar imágenes (íconos, logo). | CustomTkinter la requiere para manejar imágenes. | `pip install pillow` | Carpeta `interfaz/`: imágenes de la interfaz. COMPLETAR: archivo exacto. |
+| Matplotlib | Mostrar estadísticas en gráficos. | Permite generar gráficos y integrarlos en la interfaz. | `pip install matplotlib` | Carpeta `interfaz/`: panel principal y vista de estadísticas. |
+| Pillow | Cargar y mostrar imágenes. | CustomTkinter la utiliza para manejar imágenes. | `pip install pillow` | Carpeta `interfaz/`: imágenes de la interfaz. |
 
 Las bibliotecas se integran con las clases del proyecto únicamente en la capa de interfaz; los modelos y servicios no dependen de ellas.
 
@@ -103,7 +101,7 @@ Esta organización permite mantener el código ordenado, facilitar su mantenimie
 
 ## 7. Aplicación de la Programación Orientada a Objetos
 
-EDUCONTROL implementa los principales conceptos de la Programación Orientada a Objetos. El detalle completo, con archivos y fragmentos de código, está en [docs/INFORME_TECNICO.md](docs/INFORME_TECNICO.md).
+EDUCONTROL implementa los principales conceptos de la Programación Orientada a Objetos. El detalle completo está en el [informe técnico](docs/INFORME_TECNICO.md).
 
 ### 7.1. Clases y objetos
 
@@ -227,41 +225,37 @@ python main.py
 
 ## 12. Manual de usuario
 
-Cada sección explica cómo usar una funcionalidad. Guarda las capturas en `docs/imagenes/` con los nombres indicados.
-
 ### 12.1. Panel principal
 
 Al abrir la aplicación se muestra el panel principal con tarjetas de resumen y gráficos. Desde el menú lateral se accede al resto de secciones.
 
 ![Panel principal](docs/imagenes/panel_principal.png)
 
-### 12.2. Registrar un estudiante
+### 12.2. Gestión de estudiantes
 
-1. En el menú lateral, seleccionar **Estudiantes**. COMPLETAR: nombre exacto del botón.
-2. Llenar el formulario con los datos solicitados. COMPLETAR: lista de campos.
-3. Presionar el botón de guardar. COMPLETAR: nombre exacto.
-4. El estudiante aparece en la tabla.
+1. En el menú lateral, seleccionar la sección **Estudiantes**.
+2. Llenar el formulario con los datos solicitados.
+3. Presionar el botón de guardar.
+4. El estudiante registrado aparece en la tabla.
 
-![Registro de estudiantes](docs/imagenes/estudiantes.png)
+![Gestión de estudiantes](docs/imagenes/estudiantes.png)
 
-### 12.3. Registrar una calificación
+### 12.3. Gestión de calificaciones
 
-1. Seleccionar **Calificaciones**. COMPLETAR: nombre exacto.
-2. Elegir el estudiante y la asignatura. COMPLETAR.
-3. Ingresar la nota. Si el valor es inválido, el sistema muestra un mensaje de error. COMPLETAR: rango válido y mensaje.
+1. En el menú lateral, seleccionar la sección **Calificaciones**.
+2. Elegir el estudiante y la asignatura.
+3. Ingresar la nota. Si el valor no es válido, el sistema muestra un mensaje de error y no guarda el dato.
 4. Guardar y verificar el resultado en la tabla.
 
-![Registro de calificaciones](docs/imagenes/calificaciones.png)
+![Gestión de calificaciones](docs/imagenes/calificaciones.png)
 
-### 12.4. Consultar estadísticas
+### 12.4. Estadísticas académicas
 
-Seleccionar **Estadísticas** en el menú lateral para ver los gráficos del rendimiento académico. COMPLETAR: qué gráficos aparecen.
+Seleccionar **Estadísticas** en el menú lateral para consultar los gráficos del rendimiento académico.
 
-![Estadísticas](docs/imagenes/estadisticas.png)
+![Estadísticas académicas](docs/imagenes/estadisticas.png)
 
 ## 13. Estructura del proyecto
-
-COMPLETAR: reemplaza los nombres de archivos por los reales de tu proyecto.
 
 ```
 EDUCONTROL/
@@ -269,7 +263,7 @@ EDUCONTROL/
 ├── requirements.txt         # Dependencias externas
 ├── README.md                # Presentación y manual de usuario
 ├── modelos/                 # Entidades: Persona, Estudiante, Profesor, Asignatura, Calificacion, RegistroAcademico
-├── servicios/               # Lógica de gestión académica (GestorAcademico)
+├── servicios/               # Lógica de gestión académica
 ├── interfaz/                # Ventanas, vistas, componentes y gráficos (CustomTkinter)
 ├── pruebas/                 # Pruebas automatizadas con unittest
 └── docs/
@@ -287,7 +281,7 @@ Para ejecutar las pruebas, desde la raíz del proyecto:
 python -m unittest discover -s pruebas -t . -v
 ```
 
-En la versión verificada se ejecutaron 19 pruebas automatizadas, todas finalizadas correctamente. Las pruebas manuales documentadas están en el [informe técnico](docs/INFORME_TECNICO.md).
+En la versión verificada se ejecutaron 19 pruebas automatizadas, todas finalizadas correctamente. Las pruebas manuales están documentadas en el [informe técnico](docs/INFORME_TECNICO.md).
 
 ## 15. Almacenamiento de información
 
@@ -314,7 +308,7 @@ Esto significa que los registros creados durante la ejecución se mantienen disp
 
 ## 18. Documentación adicional
 
-El análisis del problema, el diseño del sistema, la arquitectura, la aplicación de los principios de POO, la construcción de la interfaz, las pruebas realizadas, los problemas encontrados y las conclusiones están en el [Informe técnico](docs/INFORME_TECNICO.md).
+El análisis del problema, el diseño del sistema, la arquitectura, la aplicación de los principios de POO, la construcción de la interfaz, las pruebas realizadas, los problemas encontrados y las conclusiones están en el [informe técnico](docs/INFORME_TECNICO.md).
 
 ## 19. Autor
 

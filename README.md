@@ -238,7 +238,7 @@ Al abrir la aplicación se muestra el panel principal con tarjetas de resumen y 
 3. Presionar el botón de guardar.
 4. El estudiante registrado aparece en la tabla.
 
-![Gestión de estudiantes](docs/imagenes/estudiantes.png)
+![Gestión de estudiantes](evidencias/estudiantes.png)
 
 ### 12.3. Gestión de calificaciones
 
@@ -247,13 +247,13 @@ Al abrir la aplicación se muestra el panel principal con tarjetas de resumen y 
 3. Ingresar la nota. Si el valor no es válido, el sistema muestra un mensaje de error y no guarda el dato.
 4. Guardar y verificar el resultado en la tabla.
 
-![Gestión de calificaciones](docs/imagenes/calificaciones.png)
+![Gestión de calificaciones](evidencias/calificaciones.png)
 
 ### 12.4. Estadísticas académicas
 
 Seleccionar **Estadísticas** en el menú lateral para consultar los gráficos del rendimiento académico.
 
-![Estadísticas académicas](docs/imagenes/estadisticas.png)
+![Estadísticas académicas](evidencias/reportes.png)
 
 ## 13. Estructura del proyecto
 

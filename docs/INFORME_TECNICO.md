@@ -3,8 +3,6 @@
 **Sistema de Gestión Académica**
 **Autor:** Martin Castro
 **Asignatura:** Programación Orientada a Objetos con Python
-**Repositorio:** https://github.com/martin2508-cpu/EDUCONTROL
-
 ---
 
 ## 1. Análisis del problema

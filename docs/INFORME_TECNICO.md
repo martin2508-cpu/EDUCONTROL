@@ -153,13 +153,13 @@ La interfaz llama a los métodos del gestor académico y muestra el resultado o 
 
 ### Capturas de pantalla
 
-![Panel principal]([imagenes/panel_principal.png](https://github.com/martin2508-cpu/EDUCONTROL/blob/main/Evidencias/Captura%20de%20pantalla%202026-11-18%20204901.png))
+![Panel principal](evidencias/dashboard.png)
 
-![Gestión de estudiantes](imagenes/estudiantes.png)
+![Gestión de estudiantes](evidencias/estudiantes.png)
 
-![Calificaciones](imagenes/calificaciones.png)
+![Gestión de calificaciones](evidencias/calificaciones.png)
 
-![Estadísticas](imagenes/estadisticas.png)
+![Estadísticas académicas](evidencias/reportes.png)
 
 ## 6. Proceso de desarrollo
 

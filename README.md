@@ -1,16 +1,18 @@
-# EDUCONTROL 
+# EDUCONTROL
 
 ## Sistema de Gestión Académica
 
-EDUCONTROL 2.0 es una aplicación de escritorio desarrollada en Python que permite gestionar información académica de estudiantes, profesores, asignaturas y calificaciones mediante una interfaz gráfica intuitiva y organizada.
+EDUCONTROL es una aplicación de escritorio desarrollada en Python que permite gestionar información académica de estudiantes, profesores, asignaturas y calificaciones mediante una interfaz gráfica intuitiva y organizada.
 
 El proyecto fue desarrollado como parte del parcial integrador de la asignatura de Programación Orientada a Objetos, aplicando los principales fundamentos del paradigma POO.
+
+> Búsqueda rápida antes de entregar: busca el texto `COMPLETAR` en este archivo. Cada coincidencia es algo que debes llenar con tus datos reales (capturas, nombres de archivos, pasos).
 
 ---
 
 ## 1. Descripción del proyecto
 
-EDUCONTROL 2.0 tiene como propósito facilitar la administración de información académica mediante un sistema que centraliza el registro y la consulta de estudiantes, profesores, asignaturas y resultados académicos.
+EDUCONTROL tiene como propósito facilitar la administración de información académica mediante un sistema que centraliza el registro y la consulta de estudiantes, profesores, asignaturas y resultados académicos.
 
 La aplicación cuenta con un panel principal desde el cual se puede acceder a las diferentes funcionalidades del sistema, consultar información y visualizar estadísticas académicas.
 
@@ -20,7 +22,7 @@ El sistema utiliza almacenamiento en memoria, por lo que los datos se mantienen 
 
 La gestión manual de información académica puede generar desorganización, dificultades para consultar registros y errores al administrar calificaciones.
 
-EDUCONTROL 2.0 busca ofrecer una solución informática que permita organizar esta información de manera estructurada, facilitando su administración y consulta a través de una interfaz gráfica.
+EDUCONTROL busca ofrecer una solución informática que permita organizar esta información de manera estructurada, facilitando su administración y consulta a través de una interfaz gráfica.
 
 ## 3. Objetivos
 
@@ -45,19 +47,19 @@ Presenta un resumen general del sistema mediante tarjetas informativas y element
 
 ### 4.2. Gestión de estudiantes
 
-Permite registrar, consultar y administrar la información de los estudiantes.
+Permite registrar, consultar y administrar la información de los estudiantes. COMPLETAR: indica qué operaciones concretas tiene el botón (agregar, buscar, editar, eliminar) y qué datos se piden.
 
 ### 4.3. Gestión de profesores
 
-Permite organizar la información de los profesores registrados en el sistema.
+Permite organizar la información de los profesores registrados en el sistema. COMPLETAR: operaciones concretas.
 
 ### 4.4. Gestión de asignaturas
 
-Permite administrar las asignaturas y organizar la información académica correspondiente.
+Permite administrar las asignaturas y organizar la información académica correspondiente. COMPLETAR: operaciones concretas.
 
 ### 4.5. Gestión de calificaciones
 
-Permite registrar y actualizar las calificaciones de los estudiantes, aplicando las validaciones establecidas en el sistema.
+Permite registrar y actualizar las calificaciones de los estudiantes, aplicando las validaciones establecidas en el sistema. COMPLETAR: indica el rango válido de notas y qué mensaje aparece si el dato es incorrecto.
 
 ### 4.6. Estadísticas académicas
 
@@ -75,6 +77,16 @@ Presenta información gráfica y estadística relacionada con los registros acad
 | Unittest | Ejecución de pruebas automatizadas. |
 | Git y GitHub | Control de versiones y alojamiento del proyecto. |
 
+### 5.1. Bibliotecas externas
+
+| Biblioteca | Qué problema resuelve | Por qué se eligió | Instalación | Dónde se usa |
+|---|---|---|---|---|
+| CustomTkinter | Construir una interfaz de escritorio moderna. | Ofrece componentes más actuales que Tkinter y es compatible con él. | `pip install customtkinter` | Carpeta `interfaz/`: ventanas, formularios, botones y tablas. |
+| Matplotlib | Mostrar estadísticas en gráficos. | Permite generar gráficos y integrarlos en la interfaz. | `pip install matplotlib` | Carpeta `interfaz/`: vista de estadísticas y panel principal. COMPLETAR: archivo exacto. |
+| Pillow | Cargar y mostrar imágenes (íconos, logo). | CustomTkinter la requiere para manejar imágenes. | `pip install pillow` | Carpeta `interfaz/`: imágenes de la interfaz. COMPLETAR: archivo exacto. |
+
+Las bibliotecas se integran con las clases del proyecto únicamente en la capa de interfaz; los modelos y servicios no dependen de ellas.
+
 ## 6. Arquitectura del sistema
 
 El proyecto utiliza una estructura modular que separa los modelos de datos, la lógica de gestión académica y los componentes de la interfaz gráfica.
@@ -91,7 +103,7 @@ Esta organización permite mantener el código ordenado, facilitar su mantenimie
 
 ## 7. Aplicación de la Programación Orientada a Objetos
 
-EDUCONTROL 2.0 implementa los principales conceptos de la Programación Orientada a Objetos.
+EDUCONTROL implementa los principales conceptos de la Programación Orientada a Objetos. El detalle completo, con archivos y fragmentos de código, está en [docs/INFORME_TECNICO.md](docs/INFORME_TECNICO.md).
 
 ### 7.1. Clases y objetos
 
@@ -184,7 +196,7 @@ Entre sus elementos principales se encuentran:
 
 La interfaz utiliza eventos y funciones de respuesta para conectar las acciones del usuario con la lógica del sistema.
 
-## 10. Instalación y ejecución
+## 10. Instalación
 
 ### Requisitos previos
 
@@ -196,51 +208,94 @@ La interfaz utiliza eventos y funciones de respuesta para conectar las acciones 
 
 ```bash
 git clone https://github.com/martin2508-cpu/EDUCONTROL.git
-```
-
-### Ingresar al proyecto
-
-```bash
 cd EDUCONTROL
 ```
 
 ### Instalar las dependencias
 
 ```bash
-pip install customtkinter matplotlib pillow
+pip install -r requirements.txt
 ```
 
-### Ejecutar la aplicación
+## 11. Ejecución
 
-Ubicarse en la carpeta que contiene `main.py` y ejecutar:
+Desde la carpeta raíz del proyecto (donde está `main.py`):
 
 ```bash
 python main.py
 ```
 
-**Nota:** Si se utiliza el archivo comprimido del proyecto, primero se debe extraer su contenido y acceder a la carpeta correspondiente.
+## 12. Manual de usuario
 
-## 11. Pruebas del sistema
+Cada sección explica cómo usar una funcionalidad. Guarda las capturas en `docs/imagenes/` con los nombres indicados.
+
+### 12.1. Panel principal
+
+Al abrir la aplicación se muestra el panel principal con tarjetas de resumen y gráficos. Desde el menú lateral se accede al resto de secciones.
+
+![Panel principal](docs/imagenes/panel_principal.png)
+
+### 12.2. Registrar un estudiante
+
+1. En el menú lateral, seleccionar **Estudiantes**. COMPLETAR: nombre exacto del botón.
+2. Llenar el formulario con los datos solicitados. COMPLETAR: lista de campos.
+3. Presionar el botón de guardar. COMPLETAR: nombre exacto.
+4. El estudiante aparece en la tabla.
+
+![Registro de estudiantes](docs/imagenes/estudiantes.png)
+
+### 12.3. Registrar una calificación
+
+1. Seleccionar **Calificaciones**. COMPLETAR: nombre exacto.
+2. Elegir el estudiante y la asignatura. COMPLETAR.
+3. Ingresar la nota. Si el valor es inválido, el sistema muestra un mensaje de error. COMPLETAR: rango válido y mensaje.
+4. Guardar y verificar el resultado en la tabla.
+
+![Registro de calificaciones](docs/imagenes/calificaciones.png)
+
+### 12.4. Consultar estadísticas
+
+Seleccionar **Estadísticas** en el menú lateral para ver los gráficos del rendimiento académico. COMPLETAR: qué gráficos aparecen.
+
+![Estadísticas](docs/imagenes/estadisticas.png)
+
+## 13. Estructura del proyecto
+
+COMPLETAR: reemplaza los nombres de archivos por los reales de tu proyecto.
+
+```
+EDUCONTROL/
+├── main.py                  # Punto de entrada de la aplicación
+├── requirements.txt         # Dependencias externas
+├── README.md                # Presentación y manual de usuario
+├── modelos/                 # Entidades: Persona, Estudiante, Profesor, Asignatura, Calificacion, RegistroAcademico
+├── servicios/               # Lógica de gestión académica (GestorAcademico)
+├── interfaz/                # Ventanas, vistas, componentes y gráficos (CustomTkinter)
+├── pruebas/                 # Pruebas automatizadas con unittest
+└── docs/
+    ├── INFORME_TECNICO.md   # Informe técnico del proyecto
+    └── imagenes/            # Capturas de pantalla y diagramas
+```
+
+## 14. Pruebas del sistema
 
 El proyecto incorpora pruebas automatizadas mediante la biblioteca `unittest`, con el propósito de verificar el comportamiento de los modelos, las operaciones académicas y determinados componentes gráficos.
 
-Para ejecutar las pruebas, utilizar:
+Para ejecutar las pruebas, desde la raíz del proyecto:
 
 ```bash
 python -m unittest discover -s pruebas -t . -v
 ```
 
-En la versión verificada se ejecutaron 19 pruebas automatizadas, todas finalizadas correctamente.
+En la versión verificada se ejecutaron 19 pruebas automatizadas, todas finalizadas correctamente. Las pruebas manuales documentadas están en el [informe técnico](docs/INFORME_TECNICO.md).
 
-## 12. Almacenamiento de información
+## 15. Almacenamiento de información
 
-EDUCONTROL 2.0 utiliza almacenamiento en memoria.
+EDUCONTROL utiliza almacenamiento en memoria.
 
 Esto significa que los registros creados durante la ejecución se mantienen disponibles mientras la aplicación permanece abierta. Sin embargo, al cerrar el programa, la información se pierde.
 
-La implementación de una base de datos y la persistencia de información se consideran posibles mejoras para futuras versiones.
-
-## 13. Limitaciones actuales
+## 16. Limitaciones actuales
 
 - No cuenta con una base de datos.
 - La información no se conserva después de cerrar la aplicación.
@@ -248,7 +303,7 @@ La implementación de una base de datos y la persistencia de información se con
 - No cuenta con conexión a un servidor externo.
 - Su funcionamiento está orientado a un entorno de escritorio.
 
-## 14. Mejoras futuras
+## 17. Mejoras futuras
 
 - Implementación de una base de datos para almacenar la información permanentemente.
 - Incorporación de módulos de autenticación y control de acceso.
@@ -257,19 +312,18 @@ La implementación de una base de datos y la persistencia de información se con
 - Implementación de nuevas herramientas de análisis estadístico.
 - Optimización de la interfaz y ampliación de las funcionalidades.
 
-## 15. Documentación adicional
+## 18. Documentación adicional
 
-El proyecto puede complementarse con un informe técnico que describe el análisis del problema, el diseño del sistema, la arquitectura, la aplicación de los principios de POO, el desarrollo de la interfaz gráfica, las pruebas realizadas y las conclusiones.
+El análisis del problema, el diseño del sistema, la arquitectura, la aplicación de los principios de POO, la construcción de la interfaz, las pruebas realizadas, los problemas encontrados y las conclusiones están en el [Informe técnico](docs/INFORME_TECNICO.md).
 
-## 16. Autor
+## 19. Autor
 
 **Martin Castro**
 
 Proyecto académico desarrollado para la asignatura de Programación Orientada a Objetos.
 
-**Repositorio:**  
-https://github.com/martin2508-cpu/EDUCONTROL
+**Repositorio:** https://github.com/martin2508-cpu/EDUCONTROL
 
 ---
 
-**EDUCONTROL 2.0 — Sistema de Gestión Académica**
+**EDUCONTROL — Sistema de Gestión Académica**
